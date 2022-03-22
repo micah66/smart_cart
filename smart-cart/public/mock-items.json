@@ -1,0 +1,26 @@
+[
+  {
+    "name": "milk",
+    "qty": 1,
+    "isChecked": false,
+    "id": 1
+  },
+  {
+    "name": "eggs",
+    "qty": 1,
+    "isChecked": true,
+    "id": 2
+  },
+  {
+    "name": "bread",
+    "qty": 1,
+    "isChecked": true,
+    "id": 3
+  },
+  {
+    "name": "coca-cola",
+    "qty": 3,
+    "isChecked": false,
+    "id": 4
+  }
+]
