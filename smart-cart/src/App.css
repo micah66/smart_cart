@@ -1,5 +1,13 @@
 .App {
+  height: 100vh;
   text-align: center;
+  display: grid;
+  grid-template-columns: max-content;
+  grid-template-rows: max-content;
+  grid-template-areas:
+  'logo header'
+  'nav main'
+  'footer footer'
 }
 
 .App-logo {
@@ -32,6 +40,43 @@
   list-style: none;
 }
 
+.navigation {
+  list-style: none;
+  display: grid;
+  padding: 10px;
+  row-gap: 10px;
+}
+
+
 .crossed-out {
   text-decoration: line-through;
+}
+
+.header {
+  grid-area: header;
+}
+
+/* .navigation {
+  justify-self: center;
+  align-self: center;
+} */
+
+footer {
+  align-self: center;
+  grid-area: footer;
+  grid-column: 1/3;
+}
+
+.navigation a {
+  text-decoration: none;
+}
+
+
+.navigation a:visited {
+  color: black;
+}
+
+
+.navigation a:hover {
+  color: grey;
 }
