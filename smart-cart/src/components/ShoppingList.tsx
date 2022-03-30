@@ -10,8 +10,17 @@ interface Item {
 }
 
 const ShoppingList: React.FC = (props: any) => {
-  const {data: items, error} = useFetch<Item[]>('./mock-items.json')
-  console.log(error)
+  const {data: items, isLoading, error} = useFetch<Item[]>('./mock-items.json')
+  if (isLoading) {
+    return (
+      <p>Loading...</p>
+    )
+  }
+
+  if (error) {
+    <p>Error: {error}</p>
+  }
+
   if (!items) {
     return (
       <p>You do not have any items in your cart</p>
