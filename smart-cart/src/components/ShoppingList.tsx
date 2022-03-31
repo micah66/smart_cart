@@ -9,7 +9,7 @@ interface Item {
   id: number
 }
 
-const ShoppingList: React.FC = (props: any) => {
+const ShoppingList: React.FC = () => {
   const {data: items, isLoading, error} = useFetch<Item[]>('./mock-items.json')
   if (isLoading) {
     return (
