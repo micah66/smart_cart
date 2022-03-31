@@ -1,5 +1,11 @@
+import Header from "../components/Header"
+
 const PurchaseHistory = () => {
-  return <h1>Purchase History</h1>
+  return (
+    <>
+      <Header text='Purchase History'/>
+    </>
+  )
 }
 
 export default PurchaseHistory

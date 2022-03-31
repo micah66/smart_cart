@@ -1,5 +1,11 @@
+import Header from "../components/Header"
+
 const CustomLists = () => {
-  return <h1>Custom Lists</h1>
+  return (
+    <>
+      <Header text='Custom Lists'/>
+    </>
+  )
 }
 
 export default CustomLists

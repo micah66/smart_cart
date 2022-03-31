@@ -1,5 +1,11 @@
+import Header from "../components/Header"
+
 const SavedCarts = () => {
-  return <h1>Saved Carts</h1>
+  return (
+    <>
+      <Header text='Saved Carts'/>
+    </>
+  )
 }
 
 export default SavedCarts
