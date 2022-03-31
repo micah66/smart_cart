@@ -10,9 +10,6 @@ interface item {
 const ShoppingItem: React.FC<item> = (props) => {
   return (
     <div className={`shopping-item ${props.isChecked ? 'crossed-out' : ''}`}>
-      <span className='isChecked'>
-        <input type='checkbox' defaultChecked={props.isChecked}></input>  
-      </span>
       <span className="name">
         {props.name}
       </span>
