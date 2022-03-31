@@ -1,5 +1,11 @@
+import Header from "../components/Header"
+
 const AccountSettings = () => {
-  return <h1>Account Settings</h1>
+  return (
+    <>
+      <Header text='Account Settings'/>
+    </>
+  )
 }
 
 export default AccountSettings

@@ -1,9 +1,10 @@
+import Header from "../components/Header"
 import ShoppingList from "../components/ShoppingList"
 
 const MyCart = () => {
   return (
     <>
-      <h1 className='header'>My Cart</h1>
+      <Header text={'My Cart'}/>
       <ShoppingList />
     </>
   )
