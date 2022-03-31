@@ -1,20 +1,14 @@
 import React from "react"
+import ShoppingItemProps from "../interfaces/ShoppingItemProps"
 
-
-interface item {
-  name: string,
-  qty: number,
-  isChecked: boolean
-}
-
-const ShoppingItem: React.FC<item> = (props) => {
+const ShoppingItem: React.FC<ShoppingItemProps> = ({name, qty, isChecked, id}) => {
   return (
-    <div className={`shopping-item ${props.isChecked ? 'crossed-out' : ''}`}>
+    <div className={`shopping-item ${isChecked ? 'crossed-out' : ''}`}>
       <span className="name">
-        {props.name}
+        {name}
       </span>
       <span className="qty">
-        {props.qty}
+        {qty}
       </span>
     </div>
   )
