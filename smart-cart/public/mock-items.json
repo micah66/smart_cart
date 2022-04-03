@@ -7,7 +7,7 @@
   },
   {
     "name": "eggs",
-    "qty": 1,
+    "qty": 10,
     "isChecked": true,
     "id": 2
   },
@@ -22,5 +22,11 @@
     "qty": 3,
     "isChecked": false,
     "id": 4
+  },
+  {
+    "name": "item with an extremely long name",
+    "qty": 5,
+    "isChecked": true,
+    "id": 5
   }
 ]
