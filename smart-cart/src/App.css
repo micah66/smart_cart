@@ -94,3 +94,38 @@ footer {
 .navigation a:hover {
   color: rgb(209, 209, 209);
 }
+.shopping-list-title {
+  font-size: 2em;
+}
+
+.shopping-item {
+  max-width: 50%;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  margin: auto;
+  padding-right: 15px;
+  font-size: 2em;
+  border-top: 1px #000 dotted;
+}
+
+.shopping-item-qty {
+  justify-self: center;
+}
+
+.shopping-item-name {
+  justify-self: start;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.shopping-item-edit,
+.shopping-item-delete {
+  justify-self: end;
+  align-self: center;
+  padding-left: 10px;
+}
+
+.shopping-item:hover {
+  cursor: pointer;
+}
