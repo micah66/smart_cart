@@ -2,31 +2,31 @@
   {
     "name": "milk",
     "qty": 1,
-    "isChecked": false,
+    "isCrossedOut": false,
     "id": 1
   },
   {
     "name": "eggs",
     "qty": 10,
-    "isChecked": true,
+    "isCrossedOut": true,
     "id": 2
   },
   {
     "name": "bread",
     "qty": 1,
-    "isChecked": true,
+    "isCrossedOut": true,
     "id": 3
   },
   {
     "name": "coca-cola",
     "qty": 3,
-    "isChecked": false,
+    "isCrossedOut": false,
     "id": 4
   },
   {
     "name": "item with an extremely long name",
     "qty": 5,
-    "isChecked": true,
+    "isCrossedOut": true,
     "id": 5
   }
 ]
