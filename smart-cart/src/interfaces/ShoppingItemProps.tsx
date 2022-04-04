@@ -1,4 +1,4 @@
-import ShoppingItem from "./ShoppingItem";
+import ShoppingItem from "../types/ShoppingItem";
 
 export default interface ShoppingItemProps {
   index: number,

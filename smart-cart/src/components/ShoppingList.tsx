@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ShoppingListItem from './ShoppingListItem'
 import useFetch from 'use-http'
-import ShoppingItem from '../interfaces/ShoppingItem'
+import ShoppingItem from '../types/ShoppingItem'
 
 const ShoppingList = () => {
   const [items, setItems] = useState<ShoppingItem[]>([])
