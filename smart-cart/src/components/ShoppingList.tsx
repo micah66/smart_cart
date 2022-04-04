@@ -1,37 +1,49 @@
-import React from 'react'
-import ShoppingItem from './ShoppingItem'
-import useFetch from 'react-fetch-hook'
-import ShoppingItemProps from '../interfaces/ShoppingItemProps'
+import React, { useState, useEffect } from 'react'
+import ShoppingListItem from './ShoppingListItem'
+import useFetch from 'use-http'
+import ShoppingItem from '../types/ShoppingItem'
 
 const ShoppingList = () => {
-  const {data: items, isLoading, error} = useFetch<ShoppingItemProps[]>('./mock-items.json')
-  if (isLoading) {
-    return (
-      <p>Loading...</p>
-    )
-  }
+  const [items, setItems] = useState<ShoppingItem[]>([])
+  const {get, post, response, loading, error} = useFetch<ShoppingItem[]>('http://127.0.0.1:3000')
 
-  if (error) {
-    <p>Error: {error}</p>
-  }
+  useEffect(() => {
+    get('/mock-items.json')
+    .then(shoppingList => {
+      if (response.ok) setItems(shoppingList)
+    })
+  }, [get, response])
 
-  if (!items) {
-    return (
-      <p>You do not have any items in your cart</p>
-    )
+  const toggleIsCrossedOut = (index: number) => {
+    const updatedItems = [...items]
+    updatedItems[index].isCrossedOut = !items[index].isCrossedOut
+    setItems(updatedItems)
   }
 
   return (
-    <div className='container'>
-      <h3 className='shopping-list-title'>My Shopping List</h3>
-      <ul className='shopping-list'>
-        {
-          items.map((item) => {
-            return <li key={item.id}><ShoppingItem name={item.name} qty={item.qty} isChecked={item.isChecked} id={item.id}/></li>
-          })
-        }
-      </ul>
-    </div>
+    <>
+      <div className='container'>
+        <h3 className='shopping-list-title'>My Shopping List</h3>
+        <ul className='shopping-list'>
+          {loading && <p>Loading...</p>}
+          {error && <p>Error: {error}</p>}
+          {!items.length && !error && !loading && (<p>You do not have any items in your cart</p>)}
+          {
+            items.map((item, index) => {
+              return (
+                <li key={index}>
+                  <ShoppingListItem
+                    index={index}
+                    handleClick={() => toggleIsCrossedOut(index)}
+                    item={item}
+                  />
+                </li>
+              )
+            })
+          }
+        </ul>
+      </div>
+    </>
   )
 }
 

@@ -110,6 +110,7 @@ footer {
 
 .shopping-item-qty {
   justify-self: center;
+  width: 100%;
 }
 
 .shopping-item-name {
@@ -117,6 +118,8 @@ footer {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  width: 100%;
+  text-align: start;
 }
 
 .shopping-item-edit,
