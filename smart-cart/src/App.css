@@ -132,3 +132,7 @@ footer {
 .shopping-item:hover {
   cursor: pointer;
 }
+
+.errorMessage {
+  color: red;
+}
