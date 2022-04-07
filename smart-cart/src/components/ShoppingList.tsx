@@ -94,7 +94,7 @@ const ShoppingList = () => {
       name: itemName,
       qty: itemQty,
       isCrossedOut: false,
-      id: items[items.length - 1].id + 1
+      id: items.length ? items[items.length - 1].id + 1 : 0
     }])
   }
 
