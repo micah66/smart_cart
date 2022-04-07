@@ -124,6 +124,13 @@ const ShoppingList = () => {
     setIsModalOpen(false)
   }
 
+  const removeItem = (index:number) => {
+    const removedItemId = items[index].id
+    const newItems = items.filter(item => item.id !== removedItemId)
+
+    setItems(newItems)
+  }
+
   return (
     <>
       <div className='container'>
@@ -144,9 +151,10 @@ const ShoppingList = () => {
               <li key={index}>
                 <ShoppingListItem
                   index={index}
-                  handleClick={() => toggleIsCrossedOut(index)}
+                  handleClick={(index) => toggleIsCrossedOut(index)}
                   item={item}
                   handleEdit={(e) => openEditModal(e, index)}
+                  handleClickDelete={(index) => removeItem(index)}
                 />
               </li>
             ))

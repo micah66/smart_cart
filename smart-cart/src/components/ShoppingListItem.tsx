@@ -3,11 +3,15 @@ import ShoppingItemProps from "../interfaces/ShoppingItemProps"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTimes, faPencil } from "@fortawesome/free-solid-svg-icons"
 
-const ShoppingListItem: React.FC<ShoppingItemProps> = ({index, item, handleClick, handleEdit}):JSX.Element => {
+const ShoppingListItem: React.FC<ShoppingItemProps> = ({index, item, handleClick, handleEdit, handleClickDelete}):JSX.Element => {
   const [showBtns, setShowBtns] = useState<boolean>(false)
 
   const truncateText = (text:string) => {
     return text.length > 30 ? `${text.slice(0,30)}...` : text
+  }
+
+  const onClickDelete = () => {
+    handleClickDelete(index)
   }
 
   return (
@@ -37,6 +41,7 @@ const ShoppingListItem: React.FC<ShoppingItemProps> = ({index, item, handleClick
           className='shopping-item-delete'
           icon={faTimes}
           size='xs'
+          onClick={onClickDelete}
         />
       </div>}
     </div>
